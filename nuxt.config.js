@@ -3,7 +3,7 @@ import readingTime from 'reading-time'
 let posts = []
 const hostname =
   process.NODE_ENV === 'production'
-    ? 'https://my-production-domain.com'
+    ? 'https://5f85abda7d312b129754f8e4--festive-newton-e9a77c.netlify.app/'
     : 'http://localhost:3000'
 
 function constructFeedItem(post, dir, hostname) {

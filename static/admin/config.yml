@@ -1,5 +1,5 @@
 backend:
-  name: gitlab
+  name: github
   branch: master
   repo: unlimittt/demo-nuxt
 
@@ -24,6 +24,7 @@ collections:
       - {label: "Tags", name: "tags", widget: "list"}
       - {label: "Description", name: "description", widget: "text"}
       - {label: "Keywords", name: "keywords", widget: "list"}
+      - {label: "Image", name: "image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "categories"
@@ -45,3 +46,12 @@ collections:
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Bio", name: "bio", widget: "string"}
       - {label: "Image", name: "image", widget: "image"}
+
+  - name: "tags"
+    label: "Tags"
+    folder: "content/tags"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "tags/{{fields.slug}}"
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
