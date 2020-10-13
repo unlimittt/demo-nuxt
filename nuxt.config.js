@@ -207,6 +207,11 @@ export default {
       name: 'Demo Nuxt.js site',
       short_name: 'Demo Nuxt.js',
       description: 'Demo Nuxt.js site',
+      background_color: '#FFF',
+      theme_color: '#007bff',
+      display: `standalone`,
+      crossOrigin: `use-credentials`,
+      cache_busting_mode: 'none',
     },
   },
   feed: [
