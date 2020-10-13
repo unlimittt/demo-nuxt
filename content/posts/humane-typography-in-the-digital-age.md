@@ -15,7 +15,7 @@ keywords:
   - 'design'
   - 'typography'
   - 'web development'
-image: '42-line-bible.jpg'
+image: '/media/42-line-bible.jpg'
 ---
 
 - [The first transition](#the-first-transition)

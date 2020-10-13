@@ -39,10 +39,11 @@ export default {
   },
   computed: {
     responsiveImage() {
+      const filename = this.src.substring(7, this.src.length)
       return {
-        original: require(`@/static/media/${this.src}?{original: true}`),
-        jpg: require(`@/static/media/${this.src}?{sizes: [360, 480, 720, 840], placeholder: true}`),
-        webp: require(`@/static/media/${this.src}?{sizes: [360, 480, 720, 840], format: 'webp'}`),
+        original: require(`@/static/media/${filename}?{original: true}`),
+        jpg: require(`@/static/media/${filename}?{sizes: [360, 480, 720, 840], placeholder: true}`),
+        webp: require(`@/static/media/${filename}?{sizes: [360, 480, 720, 840], format: 'webp'}`),
       }
     },
   },
