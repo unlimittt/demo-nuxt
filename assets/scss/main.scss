@@ -1,0 +1,21 @@
+//$primary: #7d61c8;
+//$secondary: #ffffff;
+//$light: #f1f1f1;
+//$dark: #000000;
+
+hr,
+img {
+  border: 0;
+  display: block;
+}
+img {
+  max-width: 100%;
+  margin: inherit;
+}
+
+figure {
+  text-align: center;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
