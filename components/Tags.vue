@@ -1,6 +1,6 @@
 <template>
-  <ul class="list">
-    <li v-for="tag of tags" :key="tag.slug" class="mx-2">
+  <div class="d-flex justify-content-center flex-wrap">
+    <div v-for="tag of tags" :key="tag.slug" class="m-1">
       <b-btn
         pill
         variant="outline-primary"
@@ -8,8 +8,8 @@
       >
         {{ tag.name }}
       </b-btn>
-    </li>
-  </ul>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -19,12 +19,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.list {
-  display: flex;
-  justify-content: center;
-  list-style-type: none;
-  padding: 0;
-}
-</style>
