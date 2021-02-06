@@ -1,6 +1,6 @@
 <template>
   <b-row justify="center">
-    <b-col cols="12" lg="9">
+    <b-col>
       <h1>Contact Us</h1>
       <b-form
         name="contact"
@@ -109,6 +109,9 @@ export default {
       },
     }
   },
+  head() {
+    return { title: 'Contact' }
+  },
   methods: {
     onChange(field, value) {
       this.values = { ...this.values, [field]: value }
@@ -132,9 +135,6 @@ export default {
           })
         })
     },
-  },
-  head() {
-    return { title: 'Contact' }
   },
 }
 </script>

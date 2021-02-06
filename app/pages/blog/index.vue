@@ -1,15 +1,9 @@
-<template>
-  <b-row justify="center">
-    <b-col cols="12" lg="9">
-      <h1>Demo Nuxt Blog</h1>
-      <blog-list :posts="posts" />
-      <pagination
-        route-name="blog-page"
-        :page="page"
-        :total-pages="totalPages"
-      />
-    </b-col>
-  </b-row>
+<template lang="pug">
+b-row(justify='center')
+  b-col
+    h1 Demo Nuxt Blog
+    blog-list(:posts='posts')
+    pagination(route-name='blog-page', :page='page', :total-pages='totalPages')
 </template>
 
 <script>

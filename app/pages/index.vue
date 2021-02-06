@@ -1,16 +1,11 @@
-<template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">Demo Nuxt</h1>
+<template lang="pug">
+.container
+  div
+    logo
+    h1.title Demo Nuxt
 
-      <div class="links">
-        <b-btn to="/blog" variant="outline-primary" size="lg">
-          Get Started
-        </b-btn>
-      </div>
-    </div>
-  </div>
+    .links
+      b-btn(to='/blog', variant='outline-primary', size='lg') Get Started
 </template>
 
 <script>
@@ -20,7 +15,7 @@ export default {}
 <style scoped>
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;

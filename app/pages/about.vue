@@ -1,6 +1,6 @@
 <template>
   <b-row justify="center">
-    <b-col cols="12" lg="9">
+    <b-col>
       <h1>About Us</h1>
       <b-card style="max-width: 540px">
         <b-row no-gutters>

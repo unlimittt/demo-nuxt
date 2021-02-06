@@ -1,6 +1,6 @@
 <template>
   <b-row justify="center">
-    <b-col cols="12" lg="9">
+    <b-col>
       <h1>Category List</h1>
       <ul>
         <li v-for="category of categories" :key="category">

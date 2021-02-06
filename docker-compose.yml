@@ -3,8 +3,10 @@ services:
   web:
     image: node:14.10.1
     tty: true
+#    command: npm run dev
     volumes:
-      - ./:/usr/src/app
+      - ./app:/app
     ports:
-      - "3000:3000"
-    working_dir: /usr/src/app
+      - "${PORT}:${PORT}"
+    working_dir: /app
+    env_file: .env

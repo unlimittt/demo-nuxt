@@ -1,11 +1,14 @@
 <template>
   <b-row justify="center">
-    <b-col cols="12" lg="9">
-      <h1>{{ category.name }}</h1>
+    <b-col>
+      <h1>{{ author.name }}</h1>
+      <img :src="author.image" :alt="author.name" />
+      <p>{{ author.bio }}</p>
+      <h3>Here are a list of articles by {{ author.name }}:</h3>
       <blog-list :posts="posts" />
       <pagination
-        route-name="blog-categories-slug-page"
-        :route-params="{ slug: category.slug }"
+        route-name="blog-authors-slug-page"
+        :route-params="{ slug: author.slug }"
         :page="page"
         :total-pages="totalPages"
       />
@@ -18,27 +21,27 @@ export default {
   async asyncData({ $content, params, env }) {
     const page = +params.page || 1
     const skip = env.postsPerPage * (page - 1)
-    const category = await $content('categories', params.slug).fetch()
+    const author = await $content('authors', params.slug).fetch()
     const posts = await $content('posts')
-      .where({ category: params.slug })
+      .where({ author: params.slug })
       .without(['body'])
       .sortBy('createdAt', 'asc')
       .limit(env.postsPerPage)
       .skip(skip)
       .fetch()
     for (const post of posts) {
-      post.category = category
-      post.author = await $content('authors', post.author).fetch()
+      post.author = author
+      post.category = await $content('categories', post.category).fetch()
     }
 
     const allPosts = await $content('posts')
-      .where({ category: params.slug })
+      .where({ author: params.slug })
       .only('slug')
       .fetch()
     const totalPages = Math.ceil(allPosts.length / env.postsPerPage)
 
     return {
-      category,
+      author,
       posts,
       page,
       totalPages,
@@ -46,30 +49,30 @@ export default {
   },
   head() {
     return {
-      title: this.category.name,
+      title: this.author.name,
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.category.description,
+          content: this.author.bio,
         },
         // Open Graph
-        { hid: 'og:title', property: 'og:title', content: this.category.name },
+        { hid: 'og:title', property: 'og:title', content: this.author.name },
         {
           hid: 'og:description',
           property: 'og:description',
-          content: this.category.description,
+          content: this.author.bio,
         },
         // Twitter Card
         {
           hid: 'twitter:title',
           name: 'twitter:title',
-          content: this.category.name,
+          content: this.author.name,
         },
         {
           hid: 'twitter:description',
           name: 'twitter:description',
-          content: this.category.description,
+          content: this.author.bio,
         },
       ],
     }
