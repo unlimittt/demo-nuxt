@@ -7,7 +7,6 @@ b-navbar.p-3.border-bottom.shadow-sm(toggleable='lg')
       b-navbar-nav.ml-auto
         b-nav-form
           app-search-input
-        b-nav-item(exact, to='/') Home
         b-nav-item(to='/about') About
         b-nav-item(to='/blog') Blog
         b-nav-item(to='/contact') Contact
